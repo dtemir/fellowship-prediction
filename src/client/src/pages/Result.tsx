@@ -1,7 +1,6 @@
 import { BarChart, ProfileCard } from "../components";
 import CountUp from "react-countup";
 import styles from "../css/result.module.css";
-import mlhAvatar from "../assets/images/mlh_logo.png";
 import { motion } from "framer-motion";
 import { pageVariant } from "../animation/variants";
 
@@ -11,7 +10,7 @@ const Result = () =>
 
     const data = 
     {
-        avatar:mlhAvatar,
+        avatar:'',
         followers:10,
         repos:10,
         stars:10,
