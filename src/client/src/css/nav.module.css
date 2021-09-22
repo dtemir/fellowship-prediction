@@ -2,17 +2,16 @@
 {
     .nav
     {
-        @apply flex  items-center justify-between px-6 py-4 bg-gray-100 shadow-sm capitalize
-        
+        @apply flex  items-center justify-between px-16 py-4 shadow-sm capitalize bg-secondary text-primary
     }
 
     .logo 
     {
-        @apply font-medium text-xl
+        @apply font-bold text-xl
     }
     .nav ul 
     {
-        @apply flex 
+        @apply flex font-medium text-lg
     }
     
     .nav ul li 
