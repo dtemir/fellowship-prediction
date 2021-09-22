@@ -1,0 +1,48 @@
+@layer components 
+{   
+
+    .result 
+    {
+        @apply space-y-10
+    }
+    .result .header
+    {
+        @apply flex flex-col items-center justify-center font-bold uppercase space-y-4 mb-4 tracking-wider
+    }
+
+    .result .header  h1 
+    {
+        @apply text-2xl text-paragraph-200 
+    }
+
+    .result .header h2 
+    {
+        @apply text-xl text-paragraph-100 
+    }
+    
+    .result > .cards
+    {
+        @apply space-y-4 md:space-y-0 md:flex md:space-x-12 
+    }
+
+    .profileCard
+    {
+        @apply  px-8 py-6  w-80 space-y-4 text-sm  capitalize bg-primary bg-opacity-95 text-paragraph-200  rounded shadow-xl
+    }
+
+    .profileCard div:first-child
+    {
+        @apply flex items-center justify-center
+    }
+
+    .profileCard div div:first-child 
+    {
+        @apply w-36 h-36 rounded-full border border-accent mb-4 
+    }
+    .profileCard div 
+    {
+        @apply flex items-center justify-between 
+    }
+
+
+}
