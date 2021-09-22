@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router";
 import { Home, About, PageNotFound} from './pages/index';
 import { Navbar } from "./components";
+import "./css/app.css";
 
 const App = () => 
 {

@@ -1,0 +1,43 @@
+@layer components
+{
+    .home
+    {
+        @apply grid grid-cols-1 lg:grid-cols-12 h-full 
+    }
+
+    .home > .left 
+    {
+        @apply col-start-1 col-end-7  space-y-10
+
+    }
+
+    .home .left div 
+    {   
+        @apply space-y-5
+    }
+
+    .home .left p 
+    {
+        @apply  uppercase tracking-wide
+    }
+
+    .home .left p:first-child
+    {
+        @apply text-4xl text-paragraph-200 font-bold
+    }
+
+    .home .left p:last-child
+    {
+        @apply text-3xl text-paragraph-100 font-bold
+    }
+
+    .home .left button 
+    {
+        @apply p-4 bg-accent text-primary text-xl uppercase rounded w-64 hover:opacity-75
+    }
+
+    .home > .right 
+    {
+        @apply col-start-8 col-end-13 hidden lg:block
+    }
+}

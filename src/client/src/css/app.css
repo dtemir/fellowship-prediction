@@ -1,0 +1,12 @@
+@layer components 
+{
+    .app
+    {
+        @apply flex flex-col min-h-screen 
+    }
+
+    .dynamicLayout
+    {
+        @apply flex flex-grow h-full px-16 py-6  items-center justify-center
+    }
+}
