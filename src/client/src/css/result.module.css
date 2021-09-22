@@ -1,6 +1,10 @@
 @layer components 
-{
+{   
 
+    .result 
+    {
+        @apply space-y-10
+    }
     .result .header
     {
         @apply flex flex-col items-center justify-center font-bold uppercase space-y-4 mb-4 tracking-wider

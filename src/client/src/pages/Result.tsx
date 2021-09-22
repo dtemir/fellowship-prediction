@@ -1,4 +1,4 @@
-import { ProfileCard } from "../components";
+import { BarChart, ProfileCard } from "../components";
 import CountUp from "react-countup";
 import styles from "../css/result.module.css";
 import mlhAvatar from "../assets/images/mlh_logo.png";
@@ -30,6 +30,9 @@ const Result = () =>
                 <div className={styles.cards}>
                     <ProfileCard data={data}/>
                     <ProfileCard data={data}/>
+                </div>
+                <div>
+                    <BarChart userScore={57} averageFellowScore={80}/>
                 </div>
             </div>
         </>
