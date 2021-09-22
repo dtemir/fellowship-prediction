@@ -36,7 +36,7 @@ const ProfileCard:React.FC<IProps> = ({data}) =>
                             <div key={property[0]}>
                                 <span>{property[0]}</span>
                                 <span>
-                                    <CountUp start={0} end={parseInt(property[1].toString())} duration={2.5}/>
+                                    <CountUp start={0} end={parseInt(property[1].toString())} duration={3.5}/>
                                 </span>
                             </div>
                         )

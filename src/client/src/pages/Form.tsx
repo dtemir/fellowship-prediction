@@ -1,5 +1,7 @@
 import { useHistory } from "react-router";
 import styles from "../css/form.module.css";
+import { motion } from "framer-motion";
+import { pageVariant } from "../animation/variants";
 
 const Form = () => 
 {
@@ -15,9 +17,13 @@ const Form = () =>
 
     return(
         <>
-            <form
+            <motion.form
                 onSubmit={handleSubmit}
                 className={styles.form}
+                variants={pageVariant}
+                initial='hidden'
+                animate='visible'
+                exit='exit'
             >
               <div className={styles.innerWrapper}>
                     <div>
@@ -36,7 +42,7 @@ const Form = () =>
                         />
                     </div>
               </div>
-            </form>
+            </motion.form>
         </>
     )
 }

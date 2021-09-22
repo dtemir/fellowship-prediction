@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import illustration from "../assets/images/select_fellow_illustration.svg";
 import styles from "../css/home.module.css";
+import { motion } from 'framer-motion';
+import { pageVariant } from "../animation/variants";
 
 const Home = () => 
 {
     return(
         <>
-            <div className={styles.home}>
+            <motion.div 
+                className={styles.home}
+                variants={pageVariant}
+                initial='hidden'
+                animate='visible'
+                exit='exit'
+            >
                 <div className={styles.left}>
                     <div>
                         <p>Hi buddy! </p>
@@ -23,7 +31,7 @@ const Home = () =>
                 <div className={styles.right}>
                     <img src={illustration} alt="illustration"/>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }

@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
+import { pageVariant } from "../animation/variants";
+
 const PageNotFound = () => 
 {
     return(
         <>
-            <div className="pageNotFound">
+            <motion.div 
+                className="pageNotFound"
+                variants={pageVariant}
+                initial='hidden'
+                animate='visible'
+                exit='exit'
+            >
                 404 Page Not Found
-            </div>
+            </motion.div>
         </>
     )
 }
