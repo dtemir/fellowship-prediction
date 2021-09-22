@@ -1,7 +1,22 @@
 @layer components 
 {
 
-    .result > div:first-child 
+    .result .header
+    {
+        @apply flex flex-col items-center justify-center font-bold uppercase space-y-4 mb-4 tracking-wider
+    }
+
+    .result .header  h1 
+    {
+        @apply text-2xl text-paragraph-200 
+    }
+
+    .result .header h2 
+    {
+        @apply text-xl text-paragraph-100 
+    }
+    
+    .result > .cards
     {
         @apply space-y-4 md:space-y-0 md:flex md:space-x-12 
     }

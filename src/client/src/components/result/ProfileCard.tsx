@@ -21,8 +21,6 @@ const ProfileCard:React.FC<IProps> = ({data}) =>
 {   
     const dataEntries = Object.entries(data).slice(1,-1);
 
-    
-
     return(
         <>
             <div className={styles.profileCard}>
