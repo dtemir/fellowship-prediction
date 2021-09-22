@@ -1,12 +1,16 @@
+import { useHistory } from "react-router";
 import styles from "../css/form.module.css";
 
 const Form = () => 
 {
 
+    const history = useHistory();
+
     const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => 
     {
         event.preventDefault();
         console.log('submited');
+        history.push('/result');
     }
 
     return(
