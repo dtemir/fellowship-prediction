@@ -21,3 +21,8 @@ body
     min-height: 100vh;
     overflow-x: hidden;
 }
+
+.dynamicLayout 
+{
+    padding: 2rem;
+}
