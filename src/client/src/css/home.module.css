@@ -18,7 +18,7 @@
 
     .home .left p 
     {
-        @apply  uppercase tracking-wide
+        @apply  uppercase tracking-wider
     }
 
     .home .left p:first-child
@@ -28,7 +28,7 @@
 
     .home .left p:last-child
     {
-        @apply text-3xl text-paragraph-100 font-bold
+        @apply text-3xl text-paragraph-100 font-semibold
     }
 
     .home .left button 

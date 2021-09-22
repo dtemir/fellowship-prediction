@@ -12,11 +12,11 @@ const Navbar = () =>
     return(
         <>
             <nav className={styles.nav}>
-                <div className={styles.logo}>
-                    <h1>
-                        Fellow Prediction
-                    </h1>
-                </div>
+                <Link to='/'>
+                    <div className={styles.logo}>
+                            <h1>Fellow Prediction</h1>
+                    </div>
+                </Link>
 
                 <ul>
                     {
