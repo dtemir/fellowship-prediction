@@ -1,0 +1,21 @@
+@layer components
+{
+    .nav
+    {
+        @apply flex  items-center justify-between px-16 py-4 shadow-sm tracking-wider capitalize bg-secondary text-primary
+    }
+
+    .logo 
+    {
+        @apply font-bold text-xl
+    }
+    .nav ul 
+    {
+        @apply flex font-medium text-sm
+    }
+    
+    .nav ul li 
+    {
+        @apply mx-2
+    }
+}

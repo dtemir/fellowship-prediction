@@ -1,0 +1,11 @@
+@layer components 
+{
+    .pageNotFound 
+    {
+        @apply flex items-center justify-center
+    }
+    .pageNotFound img
+    {
+        @apply object-cover w-10/12 
+    }
+}
