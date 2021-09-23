@@ -12,5 +12,6 @@ class API_FEATURES(Enum):
     FORKS_COUNT         = 'forks_count'        # represents the number of forks made by other people from the user github
     COMMITS             = 'commits'            # represents the total number commits that the user made since he started working with github
     ISSUES              = 'issues'             # represents the number total number of issues that the user took part of 
+    CONTRIBUTIONS       = 'contributions'
     ORGS                = 'orgs'               # represents the number of organizations that the user is part of on github
 
