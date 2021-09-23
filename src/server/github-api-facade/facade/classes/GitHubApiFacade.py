@@ -12,7 +12,7 @@ class GitHubApiFacade:
     # Methods 
 
     # generates an API_ENDPOINT , sends a request to it and return the results as json|None
-    def fetch_feature(self,feature,repo=None):
+    def __fetch_feature(self,feature,repo=None):
         try:
             API_ENDPOINT = EndPointsFactory(self.username,feature,repo).generate()
             response_api = requests.get(API_ENDPOINT)
@@ -21,7 +21,7 @@ class GitHubApiFacade:
         
         except : return None
     
-    def fetch_feature_route(self,feature,repo=None):
+    def __fetch_feature_route(self,feature,repo=None):
         try:
             API_ENDPOINT = EndPointsFactory(self.username,feature,repo).generate()
             print(f'endpoit {API_ENDPOINT}')
@@ -35,21 +35,31 @@ class GitHubApiFacade:
 
     # returns the number of fellows that a user has on github
     def get_followers(self):
-        return self.fetch_feature(API_FEATURES.FOLLOWERS.value)
+        return self.__fetch_feature(API_FEATURES.FOLLOWERS.value)
         
     # returns the number of public repos that the user has on his github
     def get_public_repos(self):
-        return self.features.feature(API_FEATURES.PUBLIC_REPOS.value)
+        return self.__fetch_feature(API_FEATURES.PUBLIC_REPOS.value)
 
     # returns the total number of stars that a user has on his github
     def get_total_stars(self):
-        repos_data = self.fetch_feature_route(API_FEATURES.STARGAZERS_COUNT.value)
+        repos_data = self.__fetch_feature_route(API_FEATURES.STARGAZERS_COUNT.value)
         total_stars = 0 
 
         for repo in repos_data:
-            total_stars += repo[API_FEATURES.STARGAZERS_COUNT.value];
+            total_stars += repo[API_FEATURES.STARGAZERS_COUNT.value]
 
         return total_stars
+
+    # returns the total number of forks that other people made from the user github
+    def get_total_forks(self):
+        repos_data = self.__fetch_feature_route(API_FEATURES.FORKS_COUNT.value)
+        total_forks = 0
+
+        for repo in repos_data:
+            total_forks += repo[API_FEATURES.FORKS_COUNT.value]
+
+        return total_forks
 
 
        
