@@ -12,10 +12,11 @@ class GitHubApiFacade:
         self.username   =   username
         self.features   =   features
         self.token      =   os.getenv('GITHUB_TOKEN')
-        self.headers    =   {"Content-Type": "application/json",
-        "Accept": "application/vnd.github.cloak-preview",
-        "Authorization": f'token {self.token}'}
-        # self.headers = {'Authorization': f'Token {self.token}'}
+        self.headers    =   {
+                                "Content-Type": "application/json",
+                                "Accept": "application/vnd.github.cloak-preview",
+                                "Authorization": f'token {self.token}'
+                            }
         self.base_url   = 'https://api.github.com'
 
     # Methods 
@@ -80,7 +81,7 @@ class GitHubApiFacade:
         return issues_data['total_count']
 
     # returns the total number of organizations that the user is included in
-
+    
     def get_total_orgs(self):
         orgs_data = self.__fetch_feature_route(API_FEATURES.ORGS.value)
         return  len(orgs_data)
