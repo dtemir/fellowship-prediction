@@ -38,6 +38,3 @@ class Test(Resource):
 
 api.add_resource(Profile, "/profile")
 api.add_resource(Test, "/status")
-
-if __name__ == "__main__":
-    app.run(debug=True)
