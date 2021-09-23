@@ -1,6 +1,7 @@
 import requests
 from .EndPointsFactory import EndPointsFactory
 from ..constants.API_FEATURES import API_FEATURES
+from ..constants.API_OUTPUTS import API_OUTPUTS
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -79,6 +80,11 @@ class GitHubApiFacade:
         issues_data = self.__fetch_feature_route(API_FEATURES.ISSUES.value)
         return issues_data['total_count']
 
+    # returns the total contribtions to other projects 
+    def __get_total_contributions(self):
+        issues_data = self.__fetch_feature_route(API_FEATURES.CONTRIBUTIONS.value)
+        return issues_data['total_count']
+
     # returns the total number of organizations that the user is included in
 
     def __get_total_orgs(self):
@@ -91,19 +97,20 @@ class GitHubApiFacade:
     # fetches the feature passed as an argument
     def get_feature(self,feature):
 
-        if(feature == API_FEATURES.FOLLOWERS.value)         :   return self.__get_followers()
-        if(feature == API_FEATURES.PUBLIC_REPOS.value)      :   return self.__get_public_repos()
-        if(feature == API_FEATURES.STARGAZERS_COUNT.value)  :   return self.__get_total_stars()
-        if(feature == API_FEATURES.FORKS_COUNT.value)             :   return self.__get_total_forks()
-        if(feature == API_FEATURES.COMMITS.value)                 :   return self.__get_total_commits()
-        if(feature == API_FEATURES.ISSUES.value)                  :   return self.__get_total_issues()
-        if(feature == API_FEATURES.ORGS.value)                    :   return self.__get_total_orgs()
+        if(feature == API_FEATURES.FOLLOWERS.value) : return self.__get_followers()
+        if(feature == API_FEATURES.PUBLIC_REPOS.value) :   return self.__get_public_repos()
+        if(feature == API_FEATURES.STARGAZERS_COUNT.value) :   return self.__get_total_stars()
+        if(feature == API_FEATURES.FORKS_COUNT.value):   return self.__get_total_forks()
+        if(feature == API_FEATURES.COMMITS.value):   return self.__get_total_commits()
+        if(feature == API_FEATURES.ISSUES.value) :   return self.__get_total_issues()
+        if(feature == API_FEATURES.CONTRIBUTIONS.value) :   return self.__get_total_contributions()
+        if(feature == API_FEATURES.ORGS.value) :   return self.__get_total_orgs()
 
 
     # returns a dictionary {feature:value}
     def fetch_all_feature(self):
         fetch_result = dict()
-        for feature in API_FEATURES:  fetch_result[feature.value] = self.get_feature(feature.value)
+        for feature in API_FEATURES:  fetch_result[API_OUTPUTS[feature.name].value] = self.get_feature(feature.value)
         return fetch_result
             
 
