@@ -36,7 +36,9 @@ class GitHubApiFacade:
     def get_followers(self):
         return self.fetch_feature(API_FEATURES.FOLLOWERS.value)
         
-        
+    # returns the number of public repos that the user has on his account
+    def get_public_repos(self):
+        return self.features.feature(API_FEATURES.PUBLIC_REPOS.value)
 
        
 
