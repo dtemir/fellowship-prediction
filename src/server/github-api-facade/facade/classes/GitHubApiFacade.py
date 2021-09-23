@@ -9,40 +9,42 @@ class GitHubApiFacade:
     
     # Constructor
     def __init__(self,username,features):
-        self.username   =   username
-        self.features   =   features
-        self.token      =   os.getenv('GITHUB_TOKEN')
-        self.headers    =   {
+        self.__username   =   username
+        self.__features   =   features
+        self.__token      =   os.getenv('GITHUB_TOKEN')
+        self.__headers    =   {
                                 "Content-Type": "application/json",
                                 "Accept": "application/vnd.github.cloak-preview",
-                                "Authorization": f'token {self.token}'
+                                "Authorization": f'token {self.__token}'
                             }
-        self.base_url   = 'https://api.github.com'
+        self.__base_url   = 'https://api.github.com'
 
     # Methods 
 
     # generates an API_ENDPOINT , sends a request to it and return the results as json|None
-    def __fetch_feature(self,feature,repo=None):
+    def __fetch_feature(self,feature):
 
         try:
-            API_ENDPOINT = EndPointsFactory(self.base_url,self.username,feature,repo).generate()
-            response_api = requests.get(API_ENDPOINT,headers=self.headers)
+            API_ENDPOINT = EndPointsFactory(self.__base_url,self.__username,feature).generate()
+            response_api = requests.get(API_ENDPOINT,headers=self.__headers)
             response_result = response_api.json()
             return response_result[feature] if str(response_api.status_code)[0] == '2' else None
         
         except : return None
     
-    def __fetch_feature_route(self,feature,repo=None):
+    
+    def __fetch_feature_route(self,feature):
 
         try:
-            API_ENDPOINT = EndPointsFactory(self.base_url,self.username,feature,repo).generate()
-            response_api = requests.get(API_ENDPOINT,headers=self.headers)
+            API_ENDPOINT = EndPointsFactory(self.__base_url,self.__username,feature).generate()
+            response_api = requests.get(API_ENDPOINT,headers=self.__headers)
             response_result = response_api.json()
             return response_result if str(response_api.status_code)[0] == '2' else None
 
         except: return None
 
-            
+    
+
 
     # returns the number of fellows that a user has on github
     def get_followers(self): return self.__fetch_feature(API_FEATURES.FOLLOWERS.value)
@@ -81,7 +83,7 @@ class GitHubApiFacade:
         return issues_data['total_count']
 
     # returns the total number of organizations that the user is included in
-    
+
     def get_total_orgs(self):
         orgs_data = self.__fetch_feature_route(API_FEATURES.ORGS.value)
         return  len(orgs_data)
