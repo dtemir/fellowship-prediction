@@ -1,4 +1,4 @@
-from .API_FEATURES import API_FEATURES 
+from ..constants.API_FEATURES import API_FEATURES 
 
 class EndPointsFactory:
 
