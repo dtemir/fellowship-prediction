@@ -74,6 +74,10 @@ class GitHubApiFacade:
         commits_data = self.__fetch_feature_route(API_FEATURES.COMMITS.value)
         return commits_data['total_count']
 
+    # returns the total number of issues 
+    def get_total_issues(self):
+        issues_data = self.__fetch_feature_route(API_FEATURES.ISSUES.value)
+        return issues_data['total_count']
 
     # returns the total number of organizations that the user is included in
 
