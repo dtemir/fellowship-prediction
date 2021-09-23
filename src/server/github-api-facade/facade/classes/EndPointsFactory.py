@@ -29,7 +29,7 @@ class EndPointsFactory:
             return f'{self.base_url}/search/commits?q=author:{self.username}'
     
         if self.feature == API_FEATURES.ISSUES.value:
-            return f'{self.base_url}/search/issues?q=user:{self.username}'
+            return f'{self.base_url}/search/issues?q=+type:pr+user:{self.username}'
 
         if self.feature == API_FEATURES.ORGS.value:
             return f'{self.base_url}/users/{self.username}/orgs'
