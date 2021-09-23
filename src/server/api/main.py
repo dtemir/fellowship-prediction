@@ -1,10 +1,12 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from flask_cors import CORS
 # from githubApiFacade.facade.classes.GitHubApiFacade import GitHubApiFacade
 from src.server.api.githubApiFacade.facade.classes.GitHubApiFacade import GitHubApiFacade
 
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 # Argument required for incoming post request
