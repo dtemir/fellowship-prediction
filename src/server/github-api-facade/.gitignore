@@ -1,2 +1,7 @@
-test.py
 **/__pycache__
+test.py
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
