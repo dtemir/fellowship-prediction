@@ -27,10 +27,7 @@ class EndPointsFactory:
 
         if self.feature == API_FEATURES.COMMITS.value:
             return f'{self.base_url}/search/commits?q=author:{self.username}'
-
-        if self.feature == API_FEATURES.PULL_REQUESTS.value:
-            return f' {self.base_url}/search/pull?q=+type:pr+{self.username}:StackExchange&sort=created&order=asc'
-        
+    
         if self.feature == API_FEATURES.ISSUES.value:
             return f'{self.base_url}/search/issues?q=user:{self.username}'
 
