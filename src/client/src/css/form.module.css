@@ -1,0 +1,32 @@
+@layer components 
+{
+    .form
+    {
+        @apply flex flex-col items-center justify-center  w-full mb-16
+    }
+
+  
+    .innerWrapper 
+    {
+        @apply text-paragraph-200 w-10/12 space-y-4
+    }
+    .innerWrapper div 
+    {
+        @apply md:grid grid-cols-12 space-y-4 md:space-y-0
+    }
+    .innerWrapper div label 
+    {
+        @apply block text-2xl font-bold uppercase col-start-1 col-end-12
+    }
+
+    .innerWrapper div input[type='text'],
+    .innerWrapper div input[type='submit']
+    {
+        @apply border border-accent rounded px-4 py-3 col-start-1 col-end-10 outline-none mr-2
+    }
+
+    .innerWrapper div input[type='submit']
+    {
+        @apply col-start-10 col-end-13 m-0 border-0 cursor-pointer bg-accent text-primary uppercase tracking-wide hover:opacity-75
+    }
+}

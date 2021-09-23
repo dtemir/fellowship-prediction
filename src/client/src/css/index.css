@@ -1,0 +1,23 @@
+/* TailWindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Native CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* 
+{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem;
+}
+
+
+body 
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
