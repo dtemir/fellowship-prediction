@@ -34,7 +34,7 @@ class EndPointsFactory:
             return f' {self.base_url}/search/issues?q=+type:pr+{self.username}:StackExchange&sort=created&order=asc'
         
         if self.feature == API_FEATURES.ISSUES.value:
-            return f'{self.base_url}/repos/{self.username}/{self.repo_name}/issues/events'
+            return f'{self.base_url}/search/issues?q=user:{self.username}'
 
         if self.feature == API_FEATURES.ORGS.value:
             return f'{self.base_url}/users/{self.username}/orgs'
