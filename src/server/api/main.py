@@ -1,13 +1,18 @@
+import json
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
 # from githubApiFacade.facade.classes.GitHubApiFacade import GitHubApiFacade
 from src.server.api.githubApiFacade.facade.classes.GitHubApiFacade import GitHubApiFacade
 
-
+# initialize flask server and enable cors
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
+
+# load averages json file
+with open("model/averages.json") as json_file:
+    average = json.load(json_file)
 
 # Argument required for incoming post request
 PersonArgs = reqparse.RequestParser()
@@ -22,7 +27,21 @@ class Profile(Resource):
         try:
             facade = GitHubApiFacade(username)
             userData = facade.fetch_all_feature()
-            return {"status": "success", "user_data": userData}, 200
+            results = {
+                "data": {
+                    "user": {
+                        "score": 0,
+                        "features": userData
+                    },
+                    "averageFellow": {
+                        "user": {
+                            "score": 0,
+                            "features": average
+                        }
+                    }
+                }
+            }
+            return results, 200
         except TypeError:
             return {"status": "fail", "message": "looks like something went wrong please try again"}
 
