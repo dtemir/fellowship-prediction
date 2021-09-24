@@ -42,6 +42,14 @@ and **become the next MLH Fellow!**
 
 ## Disclaimer
 
+Dear user, building this application, we were trying our best to provide with data insights into things you can improve through your GitHub Profile.
+This is a hackakthon project that is built by Open Source Fellows and is not directly affiliated with MLH in any capacity.
+**The positive score in your application does not guarantee your chances of becoming a fellow** because there are external things apart from GitHub that affect the decision process.
+
+We also hope that you understand that your **GitHub Stats do not affect your value to the community as a developer**.
+We all have different paths to success in our lives, and they do not necessarily involve high scores.
+Regardless of your numbers, you are going to succeed in your journey.
+
 ## Technologies Used
 
 ![Tech Stack Used](img/tech-stack.png)
@@ -118,6 +126,16 @@ Unfortunately, there is no way to take them into consideration.
 </div>
 <br>
 
+Working on the project, I learned the basics of BentoML and deploying the server model to the cloud like Heroku.
+I also gained some experience in Data Mining and Processing, which is an invaluable skill toward my journey to Machine Learning Engineering.
+
+The contributions I made are:
+* Wrote Jupyter Notebooks where we showcase our work with the GitHub API.
+* Set up a Git repository with active GitHub Projects and proper infrastructure.
+* Mined data on more than 650 fellows in the MLH Fellowship organization.
+* Created a BentoML API node deployed to Heroku for querying.
+
+
 ### Aymen Bennabi
 
 <br>
@@ -151,7 +169,7 @@ Shout out to everyone in our team!
 </div>
 <br>
 
-I worked on the backend server for the project and the deployment pipeline on heroku, I was able to use the flask rest framework for the backend which was a first for me.
+I worked on the Back-End Server for the project and the deployment pipeline on Heroku. I was able to use the Flask Rest Framework for the Back-End which was a new experience for me.
 
 ## License
 
