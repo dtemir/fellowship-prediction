@@ -2,22 +2,52 @@ import { useHistory } from "react-router";
 import styles from "../css/form.module.css";
 import { motion } from "framer-motion";
 import { pageVariant } from "../animation/variants";
+import { usePrediction } from "../contexts/PredictionContextProvider";
+import React, { useEffect, useRef, useState } from "react";
+import Alert from "../components/form/Alert";
+import { alertVariant } from "../animation/variants";
 
 const Form = () => 
 {
 
     const history = useHistory();
+    const { setUsername,setIsFetching, setError } = usePrediction();
+    const [inputError, setInputError] = useState(false);
+    const formRef = useRef(null);
 
-    const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => 
+    useEffect(() => {
+        setError(false);
+        setUsername('');
+    }, [setError,setUsername])
+    
+    const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => 
+    {
+        if(event.target.value)
+        {
+            setInputError(false);
+            return;
+        }
+        setInputError(true);
+    }
+    const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => 
     {
         event.preventDefault();
-        console.log('submited');
+        if(!formRef.current) return;
+        const username = formRef.current['username']['value'];
+        if(!username)
+        {
+            setInputError(true);
+            return;
+        }
+        setUsername(username);
+        setIsFetching(true);
         history.push('/result');
     }
 
     return(
         <>
             <motion.form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className={styles.form}
                 variants={pageVariant}
@@ -34,6 +64,8 @@ const Form = () =>
                             id="username" 
                             type="text" 
                             placeholder="Enter Your GitHub Username..."
+                            autoComplete="off"
+                            onChange={handleChange}
                         />
                         <input
                             id="submitButton"
@@ -41,6 +73,17 @@ const Form = () =>
                             value="continue"
                         />
                     </div>
+                    {
+                        inputError &&
+                        <motion.div
+                            variants={alertVariant}
+                            initial='hidden'
+                            animate='visible'
+
+                        >
+                            <Alert error="empty field" details="username cannot be empty"/>
+                        </motion.div>
+                    }
               </div>
             </motion.form>
         </>

@@ -1,13 +1,14 @@
 import {Bar} from "react-chartjs-2";
+import CHART_COLORS from "./COLORS";
 
 interface IProps 
 {
     userScore:number;
-    averageFellowScore:number;
+    averageScore:number;
 }
 
-const BarChart:React.FC<IProps> = ({userScore,averageFellowScore}) => 
-{
+const BarChart:React.FC<IProps> = ({userScore,averageScore}) => 
+{   
     const data = 
     {
         labels: ['You', 'Average MLH Fellow'],   
@@ -16,11 +17,11 @@ const BarChart:React.FC<IProps> = ({userScore,averageFellowScore}) =>
           {
             backgroundColor: 
             [
-                '#FFCD69', 
-                '#E2A120'
+                CHART_COLORS.DATA_BG_COLOR,
+                CHART_COLORS.AVERAGE_DATA_BG_COLOR
             ],
 
-            data: [userScore,averageFellowScore,100],
+            data: [userScore,averageScore,100],
           },
         ],
     };
