@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "version": "20210923201102_DB1F1F",
+    "version": "20210924101108_626F7E",
     "title": "ScoreIdentifier",
     "description": "To get a client SDK, copy all content from <a href=\"/docs.json\">docs</a> and paste into <a href=\"https://editor.swagger.io\">editor.swagger.io</a> then click the tab <strong>Generate Client</strong> and choose the language."
   },

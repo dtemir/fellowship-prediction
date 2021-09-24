@@ -28,9 +28,9 @@ except Exception:
 
 setuptools.setup(
     name='ScoreIdentifier',
-    version='20210923202456_9B2430',
+    version='20210924101108_626F7E',
     description="BentoML generated model module",
-    long_description="""# Generated BentoService bundle - ScoreIdentifier:20210923202456_9B2430
+    long_description="""# Generated BentoService bundle - ScoreIdentifier:20210924101108_626F7E
 
 This is a ML Service bundle created with BentoML, it is not recommended to edit
 code or files contained in this directory. Instead, edit the code that uses BentoML

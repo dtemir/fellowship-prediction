@@ -1,2 +1,0 @@
-include ScoreIdentifier/bentoml.yml
-graft ScoreIdentifier/artifacts
