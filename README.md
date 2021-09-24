@@ -3,6 +3,13 @@
 
 ![Fellowship Prediction Header Logo](https://socialify.git.ci/dtemir/fellowship-prediction/image?description=1&descriptionEditable=Comparative%20Analysis%20Tool%20for%20Future%20MLH%20Fellows&font=Rokkitt&forks=1&issues=1&language=1&logo=https%3A%2F%2Fi.imgur.com%2FJXjVwDA.png&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
+Table of Contents:
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Contributing](#contributing)
+
+## Features
+
 **Analyzes your GitHub Profile and presents you with a report on how likely you are to become the next MLH Fellow!**
 
 Provides you with an **extensive analysis** on the following features of your profile:
@@ -21,7 +28,7 @@ And gives you a comprehensive score of how similar your GitHub Profile is to an 
 It also shows your statistics in a **user-friendly data visualization** format for you to **gauge the range of your skills**
 and **become the next MLH Fellow!**
 
-## Technologies used
+## Technologies Used
 
 ![Tech Stack Used](img/tech-stack.png)
 
@@ -30,7 +37,7 @@ We used the following technologies:
 * **Flask** deployed to **Heroku** to setup a bridge between the frameworks and collect the input data.
 * **React.js** served on **Firebase** to provide user-friendly UI for future MLH fellows to use.
 
-## Contributing to Fellowship Prediction
+## Contributing
 
 To contribute to this open-source project, follow these steps:
 
@@ -45,6 +52,8 @@ To work on BentoML:
 2. Read [BentoML Start Guide](https://docs.bentoml.org/en/latest/quickstart.html) to learn more about the files.
 3. Improve the BentoML Interface to provide our users with a more accurate score.
 4. Create the BentoML prediction service with `python bento_packer.py` and commit the saved class from `bentoml get IrisClassifier:latest --print-location --quiet`.
+
+_Alternatively:_ Reach out to one of the [Project Contributors](https://github.com/dtemir/fellowship-prediction/graphs/contributors) for questions.
 
 ## License
 
