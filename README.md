@@ -22,6 +22,8 @@ Table of Contents:
 
 **Analyzes your GitHub Profile and presents you with a report on how likely you are to become the next MLH Fellow!**
 
+[Try it now!](https://fellowship-prediction.web.app/)
+
 Provides you with an **extensive analysis** on the following features of your profile:
 
 | Feature | Description |
@@ -83,7 +85,7 @@ _Alternatively:_ Reach out to one of the [Project Contributors](https://github.c
 
 ## Demo
 
-![YouTube Logo that Leads to our demo](img/youtube.png)
+[![YouTube Logo that Leads to our demo](img/youtube.png)](https://www.youtube.com/watch?v=gBtMHzwInAQ&ab_channel=DamirTemir)
 
 ## Motivation
 
