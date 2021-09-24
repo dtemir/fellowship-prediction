@@ -1,4 +1,4 @@
-import { BarChart, LineChart, Modal, ProfileCard } from "../components";
+import { RadarChart, BarChart, ComparisonBarChart, LineChart, Modal, ProfileCard } from "../components";
 import CountUp from "react-countup";
 import styles from "../css/result.module.css";
 import { motion } from "framer-motion";
@@ -7,7 +7,6 @@ import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router";
 import { usePrediction } from "../contexts/PredictionContextProvider";
 import mlh_logo from '../assets/images/mlh_logo.svg';
-import ComparisonBarChart from "../components/result/charts/ComparisonBarChart";
 
 
 const Result = () => 
@@ -88,6 +87,9 @@ const Result = () =>
                             </div> 
                             <div>
                                 <ComparisonBarChart data={userData} averageData={fellowData}/>
+                            </div> 
+                            <div>
+                                <RadarChart data={userData} averageData={fellowData}/>
                             </div> 
                     </motion.div>
                 }
