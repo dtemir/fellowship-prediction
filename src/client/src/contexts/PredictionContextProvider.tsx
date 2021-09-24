@@ -35,10 +35,7 @@ const PredictionContextProvider:React.FC<ReactNode> = ({children}) =>
             console.log('response',response);
 
         }   
-        catch(error)
-        {
-            // setError(true);
-        }
+        catch(error) { setError(true) };
     }
 
     return(
