@@ -1,0 +1,51 @@
+@layer components 
+{
+    .about 
+    {
+        @apply space-y-8 
+    }
+    .aboutProject
+    {
+        @apply space-y-4 
+    }
+
+    .aboutProject > div,
+    .techStack >div
+    {
+        @apply ml-4 space-y-2
+    }
+
+    .sectionTitle
+    {
+        @apply text-2xl font-bold  text-paragraph-200 capitalize
+    }
+
+
+    .aboutProject ul 
+    {
+        @apply list-disc ml-10 text-paragraph-100
+    }
+
+    .techStack 
+    {
+        @apply space-y-4
+    }
+
+    .techStack h3 
+    {
+        @apply text-xl font-semibold text-paragraph-200 capitalize
+    }
+
+    .stackAspect
+    {
+        @apply flex items-center justify-between 
+    }
+    .techStack ul  
+    {
+        @apply list-disc ml-8 
+    }
+    .techStack ul li 
+    {
+        @apply capitalize
+    }
+}
