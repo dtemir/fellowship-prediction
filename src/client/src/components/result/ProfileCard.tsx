@@ -7,6 +7,7 @@ import styles from "../../css/result.module.css";
 export interface IProps
 {
     avatar?:string
+    username?:string
     data: 
     {
         followers:number,
@@ -21,7 +22,7 @@ export interface IProps
     averageData:IProps['data'];
 }
 
-const ProfileCard:React.FC<IProps> = ({avatar, data,averageData}) => 
+const ProfileCard:React.FC<IProps> = ({avatar,username, data,averageData}) => 
 {   
     const dataEntries = Object.entries(data).sort();
     const averageDataEntries = Object.entries(averageData).sort();
@@ -39,10 +40,11 @@ const ProfileCard:React.FC<IProps> = ({avatar, data,averageData}) =>
         <>
             <div className={styles.profileCard}>
                 <div>
-                    <div>
+                    <div className="overflow-hidden">
                         <img src={avatar} alt='avatar'/>
                     </div>
                 </div>
+                <h3 className="text-xl font-semibold text-paragraph-100 tracking-wide capitalize text-center ">{username}</h3>
                 {
                 
                     dataEntries.map(((property,index)=>{

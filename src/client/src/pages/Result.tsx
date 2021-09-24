@@ -12,7 +12,7 @@ import mlh_logo from '../assets/images/mlh_logo.svg';
 const Result = () => 
 {
     const history = useHistory();
-    const {isFetching, prediction, error} = usePrediction();
+    const {username,isFetching, prediction, error} = usePrediction();
     const redirectToFormPage = () => history.push('/form');
 
     return(
@@ -40,15 +40,17 @@ const Result = () =>
                     >
                         <div className={styles.header}>
                                 <h1>congratulations! you're the next MLH fellow</h1>
-                                <h2>score <CountUp start={0} end={97} duration={2} />%</h2>
+                                <h2>score <CountUp start={0} end={prediction.user.score} duration={2} />%</h2>
                             </div>
                             <div className={styles.cards}>
                                 <ProfileCard 
-                                    avatar={mlh_logo}
+                                    username={username}
+                                    avatar={prediction.user.avatar}
                                     data={prediction.user.features} 
                                     averageData={prediction.averageFellow.features}
                                 />
                                 <ProfileCard 
+                                    username={'average MLH fellow'}
                                     avatar={mlh_logo}
                                     data={prediction.averageFellow.features} 
                                     averageData={prediction.averageFellow.features}
