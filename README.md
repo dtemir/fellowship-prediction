@@ -1,15 +1,25 @@
-# fellowship-prediction
+# Fellowship Prediction
+## GitHub Profile Comparative Analysis Tool Built with BentoMl
 
-![GitHub repo size](https://img.shields.io/github/repo-size/dtemir/fellowship-prediction)
-![GitHub contributors](https://img.shields.io/github/contributors/dtemir/fellowship-prediction)
-![GitHub stars](https://img.shields.io/github/stars/dtemir/fellowship-prediction?style=social)
-![GitHub forks](https://img.shields.io/github/forks/dtemir/fellowship-prediction?style=social)
+![Fellowship Prediction Header Logo](https://socialify.git.ci/dtemir/fellowship-prediction/image?description=1&descriptionEditable=Comparative%20Analysis%20Tool%20for%20Future%20MLH%20Fellows&font=Rokkitt&forks=1&issues=1&language=1&logo=https%3A%2F%2Fi.imgur.com%2FJXjVwDA.png&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
-Compares and gives a prediction on how likely a user would be accepted as a MLH Fellow, <br>
-using statistics pulled from their GitHub profiles. 
+**Analyzes your GitHub Profile and presents you with a report on how likely you're to become the next MLH Fellow!**
 
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
+Provides you with a **comprehensive analysis** on the following features of your profile:
+
+* Commits
+* Contributions
+* Followers
+* Forks
+* Issues
+* Organizations
+* Repos
+* Stars
+
+And gives you a comprehensive score of how similar your GitHub Profile is to an **average MLH Fellow's GitHub**.
+
+It also shows your statistics in a **user-friendly data visualization** format for you to **gauge the range of your skills**
+and **become the next MLH Fellow!**
 
 ## Technologies used
 TypeScript, Python, GitHub API
