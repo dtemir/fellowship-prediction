@@ -39,7 +39,14 @@ const Result = () =>
                         exit='exit'
                     >
                         <div className={styles.header}>
-                                <h1>congratulations! you're the next MLH fellow</h1>
+                                {
+                                    (prediction.user.score >= 50) &&
+                                    <h1>congratulations! you're the next MLH fellow</h1>
+                                }
+                                {
+                                    (prediction.user.score < 50) &&
+                                    <h1>Almost there! Here are some areas you could improve</h1>
+                                }
                                 <h2>score <CountUp start={0} end={prediction.user.score} duration={2} />%</h2>
                             </div>
                             <div className={styles.cards}>

@@ -12,7 +12,7 @@
 
     .result .header  h1 
     {
-        @apply text-2xl text-paragraph-200 
+        @apply text-2xl text-paragraph-200 mt-4
     }
 
     .result .header h2 
