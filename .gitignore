@@ -3,3 +3,4 @@
 .idea
 */.idea/*
 **/__pycache__
+.env
