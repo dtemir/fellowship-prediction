@@ -11,14 +11,14 @@ const Form = () =>
 {
 
     const history = useHistory();
-    const { setError } = usePrediction();
-    const { setUsername,setIsFetching } = usePrediction();
+    const { setUsername,setIsFetching, setError } = usePrediction();
     const [inputError, setInputError] = useState(false);
     const formRef = useRef(null);
 
     useEffect(() => {
         setError(false);
-    }, [setError])
+        setUsername('');
+    }, [setError,setUsername])
     
     const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => 
     {

@@ -6,3 +6,4 @@ export {default as ComparisonBarChart} from './result/charts/ComparisonBarChart'
 export {default as RadarChart} from './result/charts/RadarChart';
 export {default as Alert} from './form/Alert';
 export {default as Modal} from './modal/Modal';
+export {default as PrivateRoute} from './auth/PrivateRoute';
