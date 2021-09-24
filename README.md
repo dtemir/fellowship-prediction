@@ -144,6 +144,11 @@ The contributions I made are:
 </div>
 <br>
 
+During the hackathon I majorly worked on the Front-End part of the project. I created a friendly UI/UX to collect data and visualize the results. 
+Also, I helped a little bit with the Back-End by creating a facade API to make working with GitHub easier. The new interface adds a level of abstraction that mainly focuses on quantitative data that we needed to do the statistical analysis. 
+
+I really enjoyed the Orientation Hackathon. I now feel more confident working with Git/GitHub. I also started learning about functional programming base API (OCamal/dream).
+
 ### Tasha Kim
 
 <br>
