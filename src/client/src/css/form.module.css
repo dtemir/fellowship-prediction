@@ -29,4 +29,23 @@
     {
         @apply col-start-10 col-end-13 m-0 border-0 cursor-pointer bg-accent text-primary uppercase tracking-wide hover:opacity-75
     }
+
+    .innerWrapper div .alert 
+    {
+        @apply bg-error col-start-1 col-end-13 px-3 py-2 rounded text-primary font-light capitalize  justify-center items-center
+    }
+
+    .innerWrapper div .alert h6 
+    {
+        @apply col-start-1 col-end-4 flex justify-center items-center
+    }
+
+    .innerWrapper div .alert h6 span 
+    {
+        @apply text-xl mr-2
+    }
+    .innerWrapper div .alert span
+    {
+        @apply col-start-4 col-end-13
+    }
 }
