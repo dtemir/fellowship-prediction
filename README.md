@@ -11,10 +11,10 @@ Table of Contents:
 * [Demo](#demo)
 * [Motivation](#motivation)
 * [Team](#team)
-  * [Damir](#damir-temir---dtemirhttpsgithubcomdtemir)
-  * [Aymen](#aymen-bennabi---bennaaymhttpsgithubcombennaaym)
-  * [Tasha](#tasha-kim---tashakimhttpsgithubcomtashakim)
-  * [Mofe](#eyimofe-ogunbiyi---mofe64httpsgithubcommofe64)
+  * [Damir](#damir-temir)
+  * [Aymen](#aymen-bennabi)
+  * [Tasha](#tasha-kim)
+  * [Mofe](#eyimofe-ogunbiyi)
 * [License](#license)
 
 
@@ -110,7 +110,7 @@ Unfortunately, there is no way to take them into consideration.
 </table>
 </div>
 
-### Damir Temir - [@dtemir](https://github.com/dtemir)
+### Damir Temir
 
 <br>
 <div align="center">
@@ -118,7 +118,7 @@ Unfortunately, there is no way to take them into consideration.
 </div>
 <br>
 
-### Aymen Bennabi - [@bennaaym](https://github.com/bennaaym)
+### Aymen Bennabi
 
 <br>
 <div align="center">
@@ -126,7 +126,7 @@ Unfortunately, there is no way to take them into consideration.
 </div>
 <br>
 
-### Tasha Kim - [@tashakim](https://github.com/tashakim)
+### Tasha Kim
 
 <br>
 <div align="center">
@@ -143,7 +143,7 @@ Some of my contributions were:
 
 Shout out to everyone in our team!
 
-### Eyimofe Ogunbiyi - [@mofe64](https://github.com/mofe64)
+### Eyimofe Ogunbiyi
 
 <br>
 <div align="center">
