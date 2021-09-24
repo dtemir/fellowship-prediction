@@ -9,18 +9,18 @@ const RadarChart:React.FC<IProps> = ({data,averageData}) =>
 
     const chartData = 
     {
-        labels:labels,
+        labels:labels.slice(1,-1),
         datasets: 
         [
           {
             label: 'You',
-            data: dataset,
+            data: dataset.slice(1,-1),
             backgroundColor: CHART_COLORS.DATA_BG_COLOR,
             borderColor: CHART_COLORS.DATA_BORDER_COLOR,
           },
           {
             label: 'Average Fellow',
-            data: averageDataset,
+            data: averageDataset.slice(1,-1),
             backgroundColor: CHART_COLORS.AVERAGE_DATA_BG_COLOR,
             borderColor: CHART_COLORS.AVERAGE_DATA_BORDER_COLOR,
           },
