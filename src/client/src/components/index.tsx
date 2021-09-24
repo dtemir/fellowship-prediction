@@ -7,3 +7,4 @@ export {default as RadarChart} from './result/charts/RadarChart';
 export {default as Alert} from './form/Alert';
 export {default as Modal} from './modal/Modal';
 export {default as PrivateRoute} from './auth/PrivateRoute';
+export {default as Loading} from './result/Loading';

@@ -1,4 +1,4 @@
-import { RadarChart, BarChart, ComparisonBarChart, LineChart, Modal, ProfileCard } from "../components";
+import { RadarChart, BarChart, ComparisonBarChart, LineChart, Modal, ProfileCard, Loading } from "../components";
 import CountUp from "react-countup";
 import styles from "../css/result.module.css";
 import { motion } from "framer-motion";
@@ -14,11 +14,12 @@ const Result = () =>
     const history = useHistory();
     const {isFetching, prediction, error} = usePrediction();
     const redirectToFormPage = () => history.push('/form');
- 
-   
 
     return(
         <>
+            {
+                isFetching && <Loading/>
+            }
             {
                 !isFetching && error &&
                 <Modal
