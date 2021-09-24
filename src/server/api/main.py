@@ -34,10 +34,8 @@ class Profile(Resource):
                         "features": userData
                     },
                     "averageFellow": {
-                        "user": {
-                            "score": 0,
-                            "features": average
-                        }
+                        "score": 0,
+                        "features": average
                     }
                 }
             }
