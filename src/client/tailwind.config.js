@@ -10,7 +10,11 @@ module.exports = {
       {
         100:'#374151',
         200:'#1F2937'
-      }
+      },
+
+      error:'#EF4444',
+      warning:'#F59E0B',
+      success:'#10B981'
     },
     extend: {},
   },

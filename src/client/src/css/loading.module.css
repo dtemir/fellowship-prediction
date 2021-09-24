@@ -1,0 +1,12 @@
+@layer components 
+{
+    .loading
+    {
+        @apply h-64 w-64 flex items-center justify-center space-x-4 
+    }
+
+    .loading span 
+    {
+        @apply p-4 text-paragraph-200 text-2xl font-bold
+    }
+}

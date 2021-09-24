@@ -12,7 +12,7 @@
 
     .result .header  h1 
     {
-        @apply text-2xl text-paragraph-200 
+        @apply text-2xl text-paragraph-200 mt-4
     }
 
     .result .header h2 
@@ -27,7 +27,7 @@
 
     .profileCard
     {
-        @apply  px-8 py-6  w-80 space-y-4 text-sm  capitalize bg-primary bg-opacity-95 text-paragraph-200  rounded shadow-xl
+        @apply  px-8 py-6  w-80 space-y-5 text-sm  capitalize bg-primary bg-opacity-50 text-paragraph-200  rounded shadow-xl
     }
 
     .profileCard div:first-child
@@ -37,11 +37,22 @@
 
     .profileCard div div:first-child 
     {
-        @apply w-36 h-36 rounded-full border border-accent mb-4 
+        @apply w-36 h-36 rounded-full border border-accent 
     }
+    
     .profileCard div 
     {
         @apply flex items-center justify-between 
+    }
+
+    .profileCard div .feature
+    {
+        @apply ml-4
+    }
+
+    .profileCard div .featureIcon
+    {
+        @apply text-sm 
     }
 
 

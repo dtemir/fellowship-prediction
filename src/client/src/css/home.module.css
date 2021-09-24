@@ -28,7 +28,7 @@
 
     .home .left p:last-child
     {
-        @apply text-3xl text-paragraph-100 font-semibold
+        @apply text-2xl text-paragraph-100 font-semibold
     }
 
     .home .left button 

@@ -2,3 +2,5 @@
 */.ipynb_checkpoints/*
 .idea
 */.idea/*
+**/__pycache__
+*/.env
