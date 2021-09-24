@@ -30,6 +30,7 @@ class GitHubApiFacade:
                 self.__base_url, self.__username, feature).generate()
             response_api = requests.get(API_ENDPOINT, headers=self.__headers)
             response_result = response_api.json()
+            # print(response_result[feature])
             return response_result[feature] if str(response_api.status_code)[0] == '2' else None
 
         except:
@@ -54,6 +55,10 @@ class GitHubApiFacade:
     # returns the number of public repos that the user has on his github
     def __get_public_repos(self): return self.__fetch_feature(
         API_FEATURES.PUBLIC_REPOS.value)
+    # returns the url profile for the user
+
+    def __get_user_avatar(self):
+        return self.__fetch_feature(API_FEATURES.AVATAR_URL.value)
 
     # returns the total number of stars that a user has on his github
     def __get_total_stars(self):
@@ -105,6 +110,8 @@ class GitHubApiFacade:
 
         if(feature == API_FEATURES.FOLLOWERS.value):
             return self.__get_followers()
+        if(feature == API_FEATURES.AVATAR_URL.value):
+            return self.__get_user_avatar()
         if(feature == API_FEATURES.PUBLIC_REPOS.value):
             return self.__get_public_repos()
         if(feature == API_FEATURES.STARGAZERS_COUNT.value):
