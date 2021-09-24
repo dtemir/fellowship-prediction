@@ -6,6 +6,8 @@ import { pageVariant } from "../animation/variants";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router";
 import { usePrediction } from "../contexts/PredictionContextProvider";
+import mlh_logo from '../assets/images/mlh_logo.svg';
+
 
 const Result = () => 
 {
@@ -14,19 +16,30 @@ const Result = () =>
     const {error} = usePrediction();
 
     /* dummy data */
-
-    const data = 
+    const userData = 
     {
-        avatar:'',
-        followers:10,
-        repos:10,
-        stars:10,
-        forks:10,
-        commits:2000,
-        pullRequests:30,
-        issues:20,
-        organizations:2,   
+        followers:4,
+        repos:11,
+        stars:3,
+        forks:0,
+        commits:267,
+        issues:0,
+        contributions:6,
+        organizations:1,   
     }
+
+    const fellowData = 
+    {
+        followers:16,
+        repos:28,
+        stars:4,
+        forks:2,
+        commits:410,
+        issues:44,
+        contributions:32,
+        organizations:1,   
+    }
+
     
     const redirectToFormPage = () => history.push('/form')
     
@@ -55,8 +68,16 @@ const Result = () =>
                                 <h2>score <CountUp start={0} end={97} duration={2} />%</h2>
                             </div>
                             <div className={styles.cards}>
-                                <ProfileCard data={data}/>
-                                <ProfileCard data={data}/>
+                                <ProfileCard 
+                                    avatar={mlh_logo}
+                                    data={userData} 
+                                    averageData={fellowData}
+                                />
+                                <ProfileCard 
+                                    avatar={mlh_logo}
+                                    data={fellowData} 
+                                    averageData={fellowData}
+                                />
                             </div>
                             <div>
                                 <BarChart userScore={57} averageFellowScore={80}/>

@@ -33,10 +33,11 @@ const PredictionContextProvider:React.FC<ReactNode> = ({children}) =>
         {
             const response = await axios.post(`${API_BASE_URL}/profile`,{username});
             console.log('response',response);
+
         }   
         catch(error)
         {
-            setError(true);
+            // setError(true);
         }
     }
 

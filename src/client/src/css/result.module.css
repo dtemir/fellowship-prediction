@@ -27,7 +27,7 @@
 
     .profileCard
     {
-        @apply  px-8 py-6  w-80 space-y-4 text-sm  capitalize bg-primary bg-opacity-95 text-paragraph-200  rounded shadow-xl
+        @apply  px-8 py-6  w-80 space-y-4 text-sm  capitalize bg-primary bg-opacity-50 text-paragraph-200  rounded shadow-xl
     }
 
     .profileCard div:first-child
@@ -42,6 +42,16 @@
     .profileCard div 
     {
         @apply flex items-center justify-between 
+    }
+
+    .profileCard div .feature
+    {
+        @apply ml-4
+    }
+
+    .profileCard div .featureIcon
+    {
+        @apply text-sm 
     }
 
 
