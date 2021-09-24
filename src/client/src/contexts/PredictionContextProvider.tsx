@@ -1,13 +1,15 @@
-import { useState, createContext , useContext, ReactNode} from 'react';
+import { useEffect, useState, createContext , useContext, ReactNode} from 'react';
 import axios from 'axios';
 
 interface IPrediction
 {
     username:string;
+    isFetching:boolean;
     error:boolean;
     setUsername:React.Dispatch<React.SetStateAction<string>>;
-    prediction:{[feature:string]:number};
-    getPrediction:() =>Promise<void>,
+    prediction:any;
+    setIsFetching:React.Dispatch<React.SetStateAction<boolean>>,
+    setError:React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const PredictionContext = createContext<IPrediction|null>(null);
@@ -24,27 +26,37 @@ const PredictionContextProvider:React.FC<ReactNode> = ({children}) =>
 {
 
     const [username,setUsername] = useState<string>('');
-    const [prediction,] = useState<IPrediction['prediction']>({});
-    const [error,setError] = useState<IPrediction['error']>(false)
+    const [prediction,setPrediction] = useState<IPrediction['prediction']>({});
+    const [error,setError] = useState<IPrediction['error']>(false);
+    const [isFetching,setIsFetching] =useState<IPrediction['isFetching']>(false);
 
-    const getPrediction = async() => 
-    {
-        try
-        {
-            const response = await axios.post(`${API_BASE_URL}/profile`,{username});
-            console.log('response',response);
 
-        }   
-        catch(error) { setError(true) };
-    }
+    useEffect(() => {
+        
+        if(!isFetching) return;
+        axios.post(`${API_BASE_URL}/profile`,{username:username.trim()})
+        .then((response)=>{
+            const {data} = response;
+            if(data.status === 'fail') throw Error('USER NOT FOUND')
+            setPrediction(data.data);
+            setIsFetching(false);
+        })
+        .catch(error=>{
+            setError(true);
+            setIsFetching(false);
+        })
+        
+    }, [username,isFetching])
 
     return(
         <PredictionContext.Provider value={{
             username,
             setUsername,
             prediction,
-            getPrediction,
-            error
+            isFetching,
+            setIsFetching,
+            error,
+            setError
         }}>
             {children}
         </PredictionContext.Provider>

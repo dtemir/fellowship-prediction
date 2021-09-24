@@ -1,13 +1,17 @@
 import { Bar } from 'react-chartjs-2';
 import {IProps} from '../ProfileCard';
-import CHART_COLORS from './COLORS';    
+import CHART_COLORS from './COLORS'; 
+import { sortData } from './helperMethods';   
+
   
 
 const ComparisonBarChart:React.FC<IProps> = ({data,averageData}) => {
 
+    const {labels,dataset,averageDataset} = sortData(data,averageData);
+
     const chartData = 
     {
-        labels: Object.keys(data),
+        labels: labels,
         datasets:
         [
             /* user bar chart */
@@ -15,13 +19,13 @@ const ComparisonBarChart:React.FC<IProps> = ({data,averageData}) => {
               type: 'bar',
               label: 'You',
               backgroundColor: CHART_COLORS.DATA_BG_COLOR,
-              data: Object.values(data),
+              data: dataset,
             },
             {
               type: 'bar',
               label: 'Average Fellow',
               backgroundColor: CHART_COLORS.AVERAGE_DATA_BG_COLOR,
-              data: Object.values(averageData),
+              data: averageDataset,
             },
           ],
     }

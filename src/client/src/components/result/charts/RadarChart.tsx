@@ -1,23 +1,26 @@
 import { Radar } from "react-chartjs-2";
 import { IProps } from "../ProfileCard";
 import CHART_COLORS from "./COLORS";
+import { sortData } from "./helperMethods";
 
 const RadarChart:React.FC<IProps> = ({data,averageData}) => 
 {
+    const {labels,dataset,averageDataset} = sortData(data,averageData);
+
     const chartData = 
     {
-        labels: Object.keys(data),
+        labels:labels,
         datasets: 
         [
           {
             label: 'You',
-            data: Object.values(data),
+            data: dataset,
             backgroundColor: CHART_COLORS.DATA_BG_COLOR,
             borderColor: CHART_COLORS.DATA_BORDER_COLOR,
           },
           {
             label: 'Average Fellow',
-            data: Object.values(averageData),
+            data: averageDataset,
             backgroundColor: CHART_COLORS.AVERAGE_DATA_BG_COLOR,
             borderColor: CHART_COLORS.AVERAGE_DATA_BORDER_COLOR,
           },

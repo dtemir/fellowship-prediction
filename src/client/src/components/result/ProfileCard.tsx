@@ -23,8 +23,8 @@ export interface IProps
 
 const ProfileCard:React.FC<IProps> = ({avatar, data,averageData}) => 
 {   
-    const dataEntries = Object.entries(data);
-    const averageDataEntries = Object.entries(averageData);
+    const dataEntries = Object.entries(data).sort();
+    const averageDataEntries = Object.entries(averageData).sort();
 
     const iconAndColorFromFeatureScore = useCallback((userScore:number,averageFellowScore:number) => 
     {   

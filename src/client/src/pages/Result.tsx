@@ -11,42 +11,16 @@ import mlh_logo from '../assets/images/mlh_logo.svg';
 
 const Result = () => 
 {
-
     const history = useHistory();
-    const {error} = usePrediction();
+    const {isFetching, prediction, error} = usePrediction();
+    const redirectToFormPage = () => history.push('/form');
+ 
+   
 
-    /* dummy data */
-    const userData = 
-    {
-        followers:4,
-        repos:11,
-        stars:3,
-        forks:0,
-        commits:267,
-        issues:0,
-        contributions:6,
-        organizations:1,   
-    }
-
-    const fellowData = 
-    {
-        followers:16,
-        repos:28,
-        stars:4,
-        forks:2,
-        commits:410,
-        issues:44,
-        contributions:32,
-        organizations:1,   
-    }
-
-    
-    const redirectToFormPage = () => history.push('/form')
-    
     return(
         <>
             {
-                error &&
+                !isFetching && error &&
                 <Modal
                     icon={faExclamationCircle}
                     message={'invalid username please try again'}
@@ -55,7 +29,7 @@ const Result = () =>
                 />
             }
                 {
-                    !error && 
+                    !isFetching && !error && 
                     <motion.div 
                         className={styles.result}
                         variants={pageVariant}
@@ -70,26 +44,38 @@ const Result = () =>
                             <div className={styles.cards}>
                                 <ProfileCard 
                                     avatar={mlh_logo}
-                                    data={userData} 
-                                    averageData={fellowData}
+                                    data={prediction.user.features} 
+                                    averageData={prediction.averageFellow.features}
                                 />
                                 <ProfileCard 
                                     avatar={mlh_logo}
-                                    data={fellowData} 
-                                    averageData={fellowData}
+                                    data={prediction.averageFellow.features} 
+                                    averageData={prediction.averageFellow.features}
                                 />
                             </div>
                             <div>
-                                <BarChart userScore={57} averageFellowScore={80}/>
+                                <BarChart 
+                                    userScore={prediction.user.score} 
+                                    averageScore={prediction.averageFellow.score}
+                                />
                             </div> 
                             <div>
-                                <LineChart data={userData} averageData={fellowData}/>
+                                <LineChart 
+                                    data={prediction.user.features} 
+                                    averageData={prediction.averageFellow.features}
+                                />
                             </div> 
                             <div>
-                                <ComparisonBarChart data={userData} averageData={fellowData}/>
+                                <ComparisonBarChart 
+                                    data={prediction.user.features} 
+                                    averageData={prediction.averageFellow.features}
+                                />
                             </div> 
                             <div>
-                                <RadarChart data={userData} averageData={fellowData}/>
+                                <RadarChart 
+                                    data={prediction.user.features} 
+                                    averageData={prediction.averageFellow.features}
+                                />
                             </div> 
                     </motion.div>
                 }
