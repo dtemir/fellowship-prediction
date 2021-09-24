@@ -21,7 +21,7 @@ const BarChart:React.FC<IProps> = ({userScore,averageScore}) =>
                 CHART_COLORS.AVERAGE_DATA_BG_COLOR
             ],
 
-            data: [userScore,averageScore,100],
+            data: [userScore,100],
           },
         ],
     };
