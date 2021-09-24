@@ -2,8 +2,12 @@ import json
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
+import requests
 # from githubApiFacade.facade.classes.GitHubApiFacade import GitHubApiFacade
 from src.server.api.githubApiFacade.facade.classes.GitHubApiFacade import GitHubApiFacade
+
+# Constansts
+PREDICT_ENDPOINT = "https://fellow-predict.herokuapp.com/predict"
 
 # initialize flask server and enable cors
 app = Flask(__name__)
@@ -24,13 +28,19 @@ class Profile(Resource):
     def post(self):
         usernameArgs = PersonArgs.parse_args()
         username = usernameArgs['username']
+
         try:
             facade = GitHubApiFacade(username)
             userData = facade.fetch_all_feature()
+            avatar_url = userData.pop("avatar", None)
+            score = get_prediction(userData)
+            if score is None:
+                return {"status": "fail", "message": "looks like something went wrong please try again"}, 400
             results = {
                 "data": {
                     "user": {
-                        "score": 0,
+                        "score": score,
+                        "avatar": avatar_url,
                         "features": userData
                     },
                     "averageFellow": {
@@ -43,7 +53,7 @@ class Profile(Resource):
             }
             return results, 200
         except TypeError:
-            return {"status": "fail", "message": "looks like something went wrong please try again"}
+            return {"status": "fail", "message": "looks like something went wrong please try again"}, 400
 
 
 class Test(Resource):
@@ -53,3 +63,12 @@ class Test(Resource):
 
 api.add_resource(Profile, "/profile")
 api.add_resource(Test, "/status")
+
+
+def get_prediction(stats):
+    try:
+        response = requests.post(PREDICT_ENDPOINT, json=stats)
+        response_result = response.json()
+        return response_result
+    except:
+        return None
