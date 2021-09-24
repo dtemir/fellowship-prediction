@@ -1,0 +1,28 @@
+version: 0.13.1
+kind: BentoService
+metadata:
+  created_at: 2021-09-24 01:11:03.166042
+  service_name: ScoreIdentifier
+  service_version: 20210923201102_DB1F1F
+  module_name: bento_service
+  module_file: bento_service.py
+env:
+  pip_packages:
+  - bentoml==0.13.1
+  conda_env:
+    name: bentoml-default-conda-env
+    dependencies: []
+  python_version: 3.8.10
+  docker_base_image: bentoml/model-server:0.13.1-py38
+apis:
+- name: predict
+  docs: "\n        An interface API that takes a JSON type input,\n        calculates\
+    \ the score based on the data given,\n        and returns it\n        :param parsed_json:\n\
+    \        :return: score %\n        "
+  input_type: JsonInput
+  output_type: DefaultOutput
+  mb_max_batch_size: 4000
+  mb_max_latency: 20000
+  batch: false
+  route: predict
+artifacts: []
