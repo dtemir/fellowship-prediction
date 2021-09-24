@@ -68,18 +68,34 @@ To work on BentoML:
 4. Create the BentoML prediction service with `python bento_packer.py` and commit the saved class from `bentoml get IrisClassifier:latest --print-location --quiet`.
 
 To work on the Back-End:
-1. Consult [_scr/server_](https://github.com/dtemir/fellowship-prediction/tree/main/src/server/api) and its README.
+1. Consult [_scr/server_](https://github.com/dtemir/fellowship-prediction/tree/main/src/server) and its README.
 2. Make contributions.
 
 _Alternatively:_ Reach out to one of the [Project Contributors](https://github.com/dtemir/fellowship-prediction/graphs/contributors) for questions.
 
 ## Demo
 
-Placeholder for our Demo Video
+![YouTube Logo that Leads to our demo](img/youtube.png)
 
 ## Motivation
 
-We built this app 
+We built this project because we wanted to **help prospective MLH Fellows** with their progress toward a better GitHub profile
+with solid projects and a record of active work. 
+We also wanted to **give them some insights** into what an average fellow at MLH looks like.
+
+When we were just aspiring to become MLH Fellows, we would look for different sources of information to know what 
+MLH is looking for in their fellows and better ways to prepare. 
+So we tried to address this issue and hopefully support future fellows on their way to success.
+
+However, we make an important notion that **your GitHub Profile does not define you as a developer**. 
+Our tool is simply to let you see into the data for areas of potential improvement and keep working toward your goals.
+We do not consider things like:
+* Personal communication levels
+* Spot availability
+* Match in project interests
+
+The mentioned points affect your chances on becoming a fellow. 
+Unfortunately, there is no way to take them into consideration.
 
 ## Team
 
@@ -118,6 +134,15 @@ We built this app
 </div>
 <br>
 
+Utilizing BentoML gave us a flexible, high-performance framework to serve, manage, and deploy our model to predict MLH fellowship status using user's GitHub profiles. In particular, I enjoyed working with ML frameworks like Matplotlib, Seaborn, and Pandas, as well as Cloud native deployment services, and API serving that were all packaged into a single service. 
+
+Some of my contributions were:
+- Implemented the ANNOVA model as an alternative improved statiscal comparison to the one we are using now. Our current one works fine, but we can use this in the case we want a more rigorous and detailed comparison (multiple pairwise comparison (post hoc comparison) analysis for all unplanned comparison using Tukey’s honestly significantly differenced (HSD) test).
+- Built a CI (continuous integration) pipeline for build, run, and testing of our node app as well as python app using github actions.
+- Implemented method to compute average statistics for aggregated mlh fellow data.
+
+Shout out to everyone in our team!
+
 ### Eyimofe Ogunbiyi - [@mofe64](https://github.com/mofe64)
 
 <br>
@@ -125,6 +150,8 @@ We built this app
 <img width="200px" src="https://avatars.githubusercontent.com/u/56479731?v=4" alt="Eyimofe Bennabi">
 </div>
 <br>
+
+I worked on the backend server for the project and the deployment pipeline on heroku, I was able to use the flask rest framework for the backend which was a first for me.
 
 ## License
 
