@@ -1,0 +1,29 @@
+@layer components 
+{
+    .modal 
+    {
+        @apply flex items-center justify-center absolute top-0 left-0 w-full h-full bg-secondary bg-opacity-75
+    }
+
+    .modalContent 
+    {
+        @apply flex flex-col items-center justify-center space-y-6 bg-primary text-paragraph-100 p-16 w-9/12
+    }
+
+    .modalContent div 
+    {
+        @apply text-6xl
+    }
+
+    .modalContent p 
+    {
+        @apply text-xl font-medium capitalize
+    }
+
+    .modalContent button 
+    {
+        @apply px-3 py-2 w-32 bg-secondary text-primary tracking-wider  uppercase rounded  
+    }
+}
+
+  

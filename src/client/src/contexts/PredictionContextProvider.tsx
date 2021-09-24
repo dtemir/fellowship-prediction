@@ -4,6 +4,7 @@ import axios from 'axios';
 interface IPrediction
 {
     username:string;
+    error:boolean;
     setUsername:React.Dispatch<React.SetStateAction<string>>;
     prediction:{[feature:string]:number};
     getPrediction:() =>Promise<void>,
@@ -23,7 +24,8 @@ const PredictionContextProvider:React.FC<ReactNode> = ({children}) =>
 {
 
     const [username,setUsername] = useState<string>('');
-    const [prediction,setPrediction] = useState<IPrediction['prediction']>({});
+    const [prediction,] = useState<IPrediction['prediction']>({});
+    const [error,setError] = useState<IPrediction['error']>(false)
 
     const getPrediction = async() => 
     {
@@ -34,7 +36,7 @@ const PredictionContextProvider:React.FC<ReactNode> = ({children}) =>
         }   
         catch(error)
         {
-            console.log('error',error);
+            setError(true);
         }
     }
 
@@ -43,7 +45,8 @@ const PredictionContextProvider:React.FC<ReactNode> = ({children}) =>
             username,
             setUsername,
             prediction,
-            getPrediction
+            getPrediction,
+            error
         }}>
             {children}
         </PredictionContext.Provider>
