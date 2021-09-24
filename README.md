@@ -22,7 +22,13 @@ It also shows your statistics in a **user-friendly data visualization** format f
 and **become the next MLH Fellow!**
 
 ## Technologies used
-TypeScript, Python, GitHub API
+
+![Tech Stack Used](img/tech-stack.png)
+
+We used the following technologies:
+* **BentoML** along with **Heroku** to build an API endpoint that calculates the comprehensive score for the user based on a simple query.
+* **Flask** deployed to **Heroku** to setup a bridge between the frameworks and collect the input data.
+* **React.js** served on **Firebase** to provide user-friendly UI for future MLH fellows to use .
 
 ## Contributing to fellowship-prediction
 To contribute to fellowship-prediction, follow these steps:
