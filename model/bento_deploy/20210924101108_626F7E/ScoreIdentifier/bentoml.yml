@@ -1,9 +1,9 @@
 version: 0.13.1
 kind: BentoService
 metadata:
-  created_at: 2021-09-24 01:24:56.972334
+  created_at: 2021-09-24 15:11:08.707614
   service_name: ScoreIdentifier
-  service_version: 20210923202456_9B2430
+  service_version: 20210924101108_626F7E
   module_name: bento_service
   module_file: bento_service.py
 env:
