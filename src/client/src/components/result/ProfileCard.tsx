@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountUp from 'react-countup';
 import styles from "../../css/result.module.css";
 
-interface IProps
+export interface IProps
 {
-    avatar:string
+    avatar?:string
     data: 
     {
         followers:number,

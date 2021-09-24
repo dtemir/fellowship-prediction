@@ -1,4 +1,4 @@
-import { BarChart, Modal, ProfileCard } from "../components";
+import { BarChart, LineChart, Modal, ProfileCard } from "../components";
 import CountUp from "react-countup";
 import styles from "../css/result.module.css";
 import { motion } from "framer-motion";
@@ -81,7 +81,10 @@ const Result = () =>
                             </div>
                             <div>
                                 <BarChart userScore={57} averageFellowScore={80}/>
-                        </div> 
+                            </div> 
+                            <div>
+                                <LineChart data={userData} averageData={fellowData}/>
+                            </div> 
                     </motion.div>
                 }
         </>
