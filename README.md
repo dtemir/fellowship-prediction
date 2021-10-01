@@ -18,11 +18,17 @@ Table of Contents:
 * [License](#license)
 
 
+## Winner
+
+This project won the [MLH Fellowship Orientation Hackathon - Batch 4](https://fellowship-orientation-batch-4.devpost.com/) along with other great projects by MLH Fellows. We highly suggest you check them out. 
+
 ## Features
 
 **Analyzes your GitHub Profile and presents you with a report on how likely you are to become the next MLH Fellow!**
 
 [Try it now!](https://fellowship-prediction.web.app/)
+
+[![Demo Git](img/demo.gif)](https://fellowship-prediction.web.app/)
 
 Provides you with an **extensive analysis** on the following features of your profile:
 
